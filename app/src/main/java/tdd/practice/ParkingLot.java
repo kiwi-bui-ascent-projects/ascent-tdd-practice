@@ -82,4 +82,46 @@ public class ParkingLot {
 
         return fee;
     }
+
+    public String getPlates(String color) {
+        String result = "{";
+        boolean hasResult = false;
+
+        for (int i = 0; i < this.slots.length; i++) {
+            if (this.slots[i] != null && this.slots[i].getColor() == color) {
+                result += "\"" + this.slots[i].getPlate() + "\", ";
+                hasResult = true;
+            }
+        }
+
+        if (hasResult) {
+            result = result.substring(0, result.length() - 2);
+
+        }
+
+        result += "}";
+
+        return result;
+    }
+
+    public String getSlots(String color) {
+        String result = "{";
+        boolean hasResult = false;
+
+        for (int i = 0; i < this.slots.length; i++) {
+            if (this.slots[i] != null && this.slots[i].getColor() == color) {
+                result += "\"" + (i + 1) + "\", ";
+                hasResult = true;
+            }
+        }
+
+        if (hasResult) {
+            result = result.substring(0, result.length() - 2);
+
+        }
+
+        result += "}";
+
+        return result;
+    }
 }
