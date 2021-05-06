@@ -1,4 +1,4 @@
-package tdd.practice;
+package tdd.practice.parkinglot;
 
 import java.util.Random;
 
@@ -13,6 +13,7 @@ public class RandomString {
         result += letters[random.nextInt(6)];
 
         for (int i = 0; i < 8; i++) {
+            // This is inefficient.  Consider using StringBuilder instead
             result += random.nextInt(10);
         }
 

@@ -1,4 +1,4 @@
-package tdd.practice;
+package tdd.practice.parkinglot;
 
 import java.time.LocalDateTime;
 

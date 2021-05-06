@@ -1,7 +1,11 @@
-package tdd.practice;
+// Start using packages for descrete work.  Makes it much easier for other developers to follow.
+// Think of it as not having to ask the original developer any questions.
+package tdd.practice.parkinglot;
 
 import org.junit.Test;
 
+// You should start using jUnit 5 or Jupiter for all of your testing,
+// https://junit.org/junit5/docs/current/user-guide/#migrating-from-junit4
 import static org.junit.Assert.assertEquals;
 
 public class ParkingLotTest {

@@ -1,7 +1,6 @@
-package tdd.practice;
+package tdd.practice.parkinglot;
 
 import org.junit.Test;
-
 import java.time.LocalDateTime;
 
 import static org.junit.Assert.assertEquals;
