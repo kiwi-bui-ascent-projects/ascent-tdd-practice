@@ -1,7 +1,6 @@
-package tdd.practice;
+package tdd.practice.parkinglot;
 
 import org.junit.Test;
-
 import java.time.LocalDateTime;
 
 import static org.junit.Assert.assertEquals;
@@ -17,7 +16,6 @@ public class TicketTest {
         LocalDateTime actual = ticket.getTime();
 
         assertEquals("Ticket getTime should return time", time, actual);
-
     }
 
     @Test
@@ -28,7 +26,6 @@ public class TicketTest {
         String actual = ticket.getPlate();
 
         assertEquals("Ticket getPlate should return plate", expected, actual);
-
     }
 
     @Test
@@ -39,7 +36,6 @@ public class TicketTest {
         String actual = ticket.getColor();
 
         assertEquals("Ticket getColor should return color", expected, actual);
-
     }
 
     @Test
@@ -49,6 +45,5 @@ public class TicketTest {
         String actual = ticket.getID();
 
         assertNotNull("Ticket getID should return ID", actual);
-
     }
 }

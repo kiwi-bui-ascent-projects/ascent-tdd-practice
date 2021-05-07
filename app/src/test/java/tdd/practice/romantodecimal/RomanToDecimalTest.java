@@ -1,11 +1,10 @@
-package tdd.practice;
+package tdd.practice.romantodecimal;
 
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
 public class RomanToDecimalTest {
-
     @Test
     public void r2dOneTest() {
         RomanToDecimal r2d = new RomanToDecimal();

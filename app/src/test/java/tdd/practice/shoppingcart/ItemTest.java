@@ -1,4 +1,4 @@
-package tdd.practice;
+package tdd.practice.shoppingcart;
 
 import org.junit.Test;
 

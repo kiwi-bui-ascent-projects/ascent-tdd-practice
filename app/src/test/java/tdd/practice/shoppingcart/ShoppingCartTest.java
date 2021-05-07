@@ -1,6 +1,8 @@
-package tdd.practice;
+package tdd.practice.shoppingcart;
 
 import org.junit.Test;
+
+import java.util.LinkedHashMap;
 
 import static org.junit.Assert.assertEquals;
 
@@ -53,11 +55,10 @@ public class ShoppingCartTest {
         cart.addItem(itemOne);
         cart.addItem(itemTwo);
 
-        String expected = "{\n" +
-                          "  Toy Car: 1\n" +
-                          "  Toy Truck: 1\n" +
-                          "}";
-        String actual = cart.itemizedList();
+        LinkedHashMap<String, Integer> expected = new LinkedHashMap<>();
+        expected.put("Toy Car", 1);
+        expected.put("Toy Truck", 1);
+        LinkedHashMap actual = cart.itemizedList();
 
         assertEquals("Cart itemizedList method should JSON of items and quantities", expected, actual);
     }

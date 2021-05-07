@@ -1,7 +1,6 @@
-package tdd.practice;
+package tdd.practice.fizzbuzz;
 
 public class FizzBuzz {
-
     public String get(int i) {
         String result = "";
 

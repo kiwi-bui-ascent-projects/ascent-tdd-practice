@@ -1,4 +1,4 @@
-package tdd.practice;
+package tdd.practice.calculator;
 
 import org.junit.Test;
 

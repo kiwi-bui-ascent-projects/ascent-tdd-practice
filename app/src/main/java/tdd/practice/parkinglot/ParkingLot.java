@@ -1,7 +1,9 @@
-package tdd.practice;
+package tdd.practice.parkinglot;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ParkingLot {
     private boolean full;
@@ -47,7 +49,7 @@ public class ParkingLot {
         int i;
 
         for (i = 0; i < this.slots.length; i++) {
-            if (this.slots[i] != null && this.slots[i].getPlate() == plate) {
+            if (this.slots[i] != null && this.slots[i].getPlate().equals(plate)) {
                 return i + 1;
             }
         }
@@ -60,14 +62,12 @@ public class ParkingLot {
         long hours = 0;
 
         for (int i = 0; i < this.slots.length; i++) {
-            if (this.slots[i] != null && this.slots[i].getID() == id) {
+            if (this.slots[i] != null && this.slots[i].getID().equals(id)) {
                 hours = Duration.between(this.slots[i].getTime(), LocalDateTime.now()).toHours();
                 this.slots[i] = null;
                 break;
             }
         }
-
-        System.out.println(hours);
 
         if (hours > 1) {
             if (hours >= this.dailyFeeHourLimit) {
@@ -80,48 +80,31 @@ public class ParkingLot {
             }
         }
 
+        this.full = false;
         return fee;
     }
 
-    public String getPlates(String color) {
-        String result = "{";
-        boolean hasResult = false;
+    public List getPlates(String color) {
+        ArrayList<String> plates = new ArrayList<String>();
 
-        for (int i = 0; i < this.slots.length; i++) {
-            if (this.slots[i] != null && this.slots[i].getColor() == color) {
-                result += "\"" + this.slots[i].getPlate() + "\", ";
-                hasResult = true;
+        for (Ticket ticket : this.slots) {
+            if (ticket != null && ticket.getColor().equals(color)) {
+                plates.add(ticket.getPlate());
             }
         }
 
-        if (hasResult) {
-            result = result.substring(0, result.length() - 2);
-
-        }
-
-        result += "}";
-
-        return result;
+        return plates;
     }
 
-    public String getSlots(String color) {
-        String result = "{";
-        boolean hasResult = false;
+    public List getSlots(String color) {
+        ArrayList<Integer> slotsWithColor = new ArrayList<Integer>();
 
         for (int i = 0; i < this.slots.length; i++) {
-            if (this.slots[i] != null && this.slots[i].getColor() == color) {
-                result += "\"" + (i + 1) + "\", ";
-                hasResult = true;
+            if (this.slots[i] != null && this.slots[i].getColor().equals(color)) {
+                slotsWithColor.add(i + 1);
             }
         }
 
-        if (hasResult) {
-            result = result.substring(0, result.length() - 2);
-
-        }
-
-        result += "}";
-
-        return result;
+        return slotsWithColor;
     }
 }

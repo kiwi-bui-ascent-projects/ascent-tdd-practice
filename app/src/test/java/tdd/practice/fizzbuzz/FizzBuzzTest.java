@@ -1,11 +1,10 @@
-package tdd.practice;
+package tdd.practice.fizzbuzz;
 
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
 public class FizzBuzzTest {
-
     @Test
     public void fizzBuzzNoMatchTest() {
         FizzBuzz fb = new FizzBuzz();

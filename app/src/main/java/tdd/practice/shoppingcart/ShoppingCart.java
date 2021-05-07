@@ -1,4 +1,4 @@
-package tdd.practice;
+package tdd.practice.shoppingcart;
 
 import java.util.*;
 
@@ -22,8 +22,7 @@ public class ShoppingCart {
         return total;
     }
 
-    public String itemizedList() {
-        String result = "{\n";
+    public LinkedHashMap itemizedList() {
         LinkedHashMap<String, Integer> mappedItems = new LinkedHashMap<>();
 
         for (Item item : items) {
@@ -34,15 +33,6 @@ public class ShoppingCart {
             }
         }
 
-        Iterator iterator = mappedItems.entrySet().iterator();
-
-        while (iterator.hasNext()) {
-            Map.Entry element = (Map.Entry)iterator.next();
-            result += "  " + element.getKey() + ": " + element.getValue() + "\n";
-        }
-
-        result += "}";
-
-        return result;
+        return mappedItems;
     }
 }

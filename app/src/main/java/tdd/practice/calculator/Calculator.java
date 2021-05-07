@@ -1,11 +1,11 @@
-package tdd.practice;
+package tdd.practice.calculator;
 
 public class Calculator {
     public int add(String input) throws NegativeNumbersException {
         int sum = 0;
         String negatives = "";
 
-        if (input != "") {
+        if (!input.equals("")) {
             String delimiters = ",|\n";
 
             if (input.charAt(0) == '/') {
@@ -23,7 +23,7 @@ public class Calculator {
             }
         }
 
-        if (negatives != "") {
+        if (!negatives.equals("")) {
             throw new NegativeNumbersException("negatives not allowed:" +
                     negatives.substring(0, negatives.length() - 1));
         } else {

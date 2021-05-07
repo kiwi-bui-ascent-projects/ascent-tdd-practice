@@ -1,7 +1,6 @@
-package tdd.practice;
+package tdd.practice.shoppingcart;
 
 public class Item {
-
     private String name;
     private int price;
     private boolean onSale;

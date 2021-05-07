@@ -1,8 +1,7 @@
-package tdd.practice;
+package tdd.practice.parkinglot;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 public class RandomStringTest {
