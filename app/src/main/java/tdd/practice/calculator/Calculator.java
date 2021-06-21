@@ -18,7 +18,7 @@ public class Calculator {
                 if (number.charAt(0) == '-') {
                     negatives += String.format(" %s,", number);
                 } else {
-                    sum += Integer.valueOf(number);
+                    sum += Integer.parseInt(number);
                 }
             }
         }

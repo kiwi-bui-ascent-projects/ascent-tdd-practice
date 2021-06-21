@@ -61,7 +61,7 @@ public class ParkingLotTest {
         List<Integer> expected = new ArrayList<Integer>();
         expected.add(1);
         expected.add(4);
-        List<String> actual = lot.getSlots("Red");
+        List<Integer> actual = lot.getSlots("Red");
 
         assertEquals("ParkingLot getSlots method should get all slots of a color", expected, actual);
     }

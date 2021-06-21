@@ -3,7 +3,7 @@ package tdd.practice.romantodecimal;
 import java.util.HashMap;
 
 public class RomanToDecimal {
-    private HashMap<Character, Integer> numerals = new HashMap<>() {{
+    private final HashMap<Character, Integer> numerals = new HashMap<>() {{
         put('I', 1);
         put('V', 5);
         put('X', 10);

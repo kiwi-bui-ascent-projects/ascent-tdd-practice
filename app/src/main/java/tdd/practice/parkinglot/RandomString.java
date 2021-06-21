@@ -3,7 +3,7 @@ package tdd.practice.parkinglot;
 import java.util.Random;
 
 public class RandomString {
-    private static String[] letters = {"a", "b", "c", "d", "e", "f"};
+    private static final String[] letters = {"a", "b", "c", "d", "e", "f"};
 
     public static String get() {
         Random random = new Random();

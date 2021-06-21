@@ -7,10 +7,10 @@ import java.util.List;
 
 public class ParkingLot {
     private boolean full;
-    private Ticket[] slots;
-    private int hourlyFee;
-    private int dailyFee;
-    private int dailyFeeHourLimit;
+    private final Ticket[] slots;
+    private final int hourlyFee;
+    private final int dailyFee;
+    private final int dailyFeeHourLimit;
 
     public ParkingLot(int slots, int hourFee, int dailyFee, int dailyFeeHourLimit) {
         this.slots = new Ticket[slots];
@@ -71,7 +71,7 @@ public class ParkingLot {
 
         if (hours > 1) {
             if (hours >= this.dailyFeeHourLimit) {
-                double days = Math.floor(hours / this.dailyFeeHourLimit);
+                long days = hours / this.dailyFeeHourLimit;
                 double hoursLeft = hours % this.dailyFeeHourLimit;
                 fee += (days * this.dailyFee);
                 fee += (hoursLeft + 1) * this.hourlyFee;
@@ -84,7 +84,7 @@ public class ParkingLot {
         return fee;
     }
 
-    public List getPlates(String color) {
+    public List<String> getPlates(String color) {
         ArrayList<String> plates = new ArrayList<String>();
 
         for (Ticket ticket : this.slots) {
@@ -96,7 +96,7 @@ public class ParkingLot {
         return plates;
     }
 
-    public List getSlots(String color) {
+    public List<Integer> getSlots(String color) {
         ArrayList<Integer> slotsWithColor = new ArrayList<Integer>();
 
         for (int i = 0; i < this.slots.length; i++) {

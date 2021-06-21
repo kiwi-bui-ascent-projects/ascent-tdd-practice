@@ -3,11 +3,10 @@ package tdd.practice.parkinglot;
 import java.time.LocalDateTime;
 
 public class Ticket {
-
-    private LocalDateTime time;
-    private String plate;
-    private String color;
-    private String ID;
+    private final LocalDateTime time;
+    private final String plate;
+    private final String color;
+    private final String ID;
 
     public Ticket(LocalDateTime time, String plate, String color) {
         this.time = time;

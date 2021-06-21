@@ -58,7 +58,7 @@ public class ShoppingCartTest {
         LinkedHashMap<String, Integer> expected = new LinkedHashMap<>();
         expected.put("Toy Car", 1);
         expected.put("Toy Truck", 1);
-        LinkedHashMap actual = cart.itemizedList();
+        LinkedHashMap<String, Integer>  actual = cart.itemizedList();
 
         assertEquals("Cart itemizedList method should JSON of items and quantities", expected, actual);
     }

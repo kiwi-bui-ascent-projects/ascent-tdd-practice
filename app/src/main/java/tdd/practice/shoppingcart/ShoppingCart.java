@@ -3,7 +3,7 @@ package tdd.practice.shoppingcart;
 import java.util.*;
 
 public class ShoppingCart {
-    private ArrayList<Item> items = new ArrayList<>();
+    private final ArrayList<Item> items = new ArrayList<>();
 
     public int itemQuantities() {
         return items.size();
@@ -22,7 +22,7 @@ public class ShoppingCart {
         return total;
     }
 
-    public LinkedHashMap itemizedList() {
+    public LinkedHashMap<String, Integer>  itemizedList() {
         LinkedHashMap<String, Integer> mappedItems = new LinkedHashMap<>();
 
         for (Item item : items) {
